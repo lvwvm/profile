@@ -1,12 +1,12 @@
 --[[
-    Cesious Awesome WM theme
-    Created by Culinax
+    Homestead Awesome WM theme
+    Created by 10b2
 --]]
 
 theme = {}
-theme.dir = "/usr/share/awesome/themes/cesious"
+theme.dir = "/usr/share/awesome/themes/homestead"
 
-theme.font          = "Noto Sans SemiCondensed Medium Nerd Font Complete 12"
+theme.font          = "NotoSans Nerd Font Medium 12"
 
 theme.bg_normal     = "#222D32"
 theme.bg_focus      = "#2C3940"
@@ -94,7 +94,7 @@ theme.awesome_icon = theme.dir .. "/icons/manjaro64.png"
 
 -- Define the icon theme for application icons. If not set then the icons 
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = "Arc-Maia"
+theme.icon_theme = "Papirus-Dark-Maia"
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

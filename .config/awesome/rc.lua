@@ -43,8 +43,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.getdir("config") .. "/themes/cesious/theme.lua")
-beautiful.notification_font = "GohuFont Nerd Font Mono uni-14 12"
+beautiful.init(awful.util.getdir("config") .. "/themes/homestead/theme.lua")
+beautiful.notification_font = "NotoSansDisplay Nerd Font Regular Medium 12"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -101,28 +101,28 @@ myawesomemenu = {
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
     { "manual", terminal .. " -e man awesome" },
     { "edit config", string.format("%s %s", editor, awesome.conffile) },
-    { "edit theme", string.format("%s %s", editor, ".config/awesome/themes/cesious/theme.lua") },
+    { "edit theme", string.format("%s %s", editor, ".config/awesome/themes/homestead/theme.lua") },
     { "restart", awesome.restart }
 }
 
 myexitmenu = {
-    { "log out", function() awesome.quit() end, "/usr/share/icons/Arc-Maia/actions/24@2x/system-log-out.png" },
-    { "suspend", "systemctl suspend", "/usr/share/icons/Arc-Maia/actions/24@2x/gnome-session-suspend.png" },
-    { "hibernate", "systemctl hibernate", "/usr/share/icons/Arc-Maia/actions/24@2x/gnome-session-hibernate.png" },
-    { "reboot", "systemctl reboot", "/usr/share/icons/Arc-Maia/actions/24@2x/view-refresh.png" },
-    { "shutdown", "poweroff", "/usr/share/icons/Arc-Maia/actions/24@2x/system-shutdown.png" }
+    { "log out", function() awesome.quit() end, "/usr/share/icons/Papirus-Dark/symbolic/actions/system-log-out-symbolic.svg" },
+    { "suspend", "systemctl suspend", "/usr/share/icons/Papirus-Dark/symbolic/actions/system-suspend-symbolic.svg" },
+    { "hibernate", "systemctl hibernate", "/usr/share/icons/Papirus-Dark/symbolic/actions/system-hibernate-symbolic.svg" },
+    { "reboot", "systemctl reboot", "/usr/share/icons/Papirus-Dark/symbolic/actions/system-reboot-symbolic.svg" },
+    { "shutdown", "poweroff", "/usr/share/icons/Papirus-Dark/symbolic/actions/system-shutdown-symbolic.svg" }
 }
 
 mymainmenu = freedesktop.menu.build({
     before = {
-        { "Terminal", terminal, "/usr/share/icons/Moka/32x32/apps/utilities-terminal.png" },
-        { "Browser", browser, "/usr/share/icons/hicolor/24x24/apps/chromium.png" },
-        { "Files", filemanager, "/usr/share/icons/Arc-Maia/places/32/user-home.png" },
+        { "Terminal", terminal, "/usr/share/icons/Papirus/64x64/apps/terminal.svg" },
+        { "Browser", browser, "/usr/share/icons/Papirus/64x64/apps/firefox.svg" },
+        { "Files", filemanager, "/usr/share/icons/Papirus/64x64/apps/system-file-manager.svg" },
         -- other triads can be put here
     },
     after = {
         { "Awesome", myawesomemenu, "/usr/share/awesome/icons/awesome16.png" },
-        { "Exit", myexitmenu, "/usr/share/icons/Arc-Maia/actions/24@2x/system-restart.png" },
+        { "Exit", myexitmenu, "/usr/share/icons/Papirus-Dark/symbolic/actions/application-exit-symbolic.svg" },
         -- other triads can be put here
     }
 })
