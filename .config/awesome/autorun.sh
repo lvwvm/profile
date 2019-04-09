@@ -26,7 +26,6 @@ if (command -v system-config-printer-applet && ! pgrep applet.py ); then
 fi
 
 run xfsettingsd
-run nm-applet
 run light-locker
 run compton --shadow-exclude '!focused'
 run xcape -e 'Super_L=Super_L|Control_L|Escape'
