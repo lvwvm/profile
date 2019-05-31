@@ -1,53 +1,82 @@
 #!/usr/bin/env sh
+# SPDX-License-Identifier: GPL-2.0-or-later
 # shellcheck shell=sh
 
-#######################################
-#
-#  Portable-Profile Settings
-#
-#  Maintainer: Idigo Luwum
-#
-#######################################
+progname='p3'
+author='Idigo Luwum'
+version='2.0.0'
 
-set -a
+P3_DIR=${P3_DIR:+${HOME}/.config/p3}
 
-main() {
+usage() {
+    cat <-EOF
+    "$progname is very simple way to manage profile initialization in pure posix sh.\
 
-	XDG_CONFIG_HOME="${HOME}/.config"
+    Usage: p3 [OPTIONS] [P3_DIR]
 
-        #shellcheck disable=2034
-	XDG_DATA_HOME="${HOME}/.local/share"
-
-        #shellcheck disable=2034
-        XDG_BIN_HOME="${HOME}/.local/bin"
-
-        #shellcheck disable=2034
-        XDG_CACHE_HOME="${HOME}/.local/cache"
-        
-        #shellcheck disable=1090
-        . "${XDG_CONFIG_HOME}/profile/00-util.sh"
-
-	load_extensions
-
-	distro=$(guess_distro)
-	os=$(uname -s)
-
-	case ${os} in
-	'Linux')
-		case ${distro} in
-		'manjaro' | 'arch')
-			:
-			;;
-		esac
-		;;
-	'Darwin')
-		:
-		;;
-	esac
-        
-	unset distro
-	unset os
-
+    Where the default P3_DIR is ~/.config/p3
+    "
+    EOF
 }
 
-main
+version() {
+    echo $version
+}
+
+var() {
+    set -a
+    # uppercase the environment variable.
+    VAR=$(echo "$1" | tr "[:lower:]" "[:upper:]")
+    if [ -z ${1:+} ]; then
+        export "${VAR}=$2"
+    fi
+    unset VAR
+    set +a
+}
+
+load() {
+    for f in "$P3_DIR"/* ; do
+        if [ -x "$f" ]; then
+            . "$f"
+        fi
+    done
+}
+
+p3() {
+    if [ $# -eq 1 ]; then
+        P3_DIR="$1"
+    fi
+    case "$@" in
+    -v | --version)
+        version
+        exit 0
+        ;;
+    -h | --help)
+        usage
+        exit 0
+        ;;
+    esac
+    if [ ! -d "$P3_DIR" ]; then
+        #Don't read from stdin in a non-interactive shell.
+        case "$-" in
+        *i*)
+            printf "Directory %s does not exist. Create (yY/nN): " "$P3_DIR"
+            read -r answer
+
+            case "$answer" in
+            y* | Y*)
+                mkdir "$P3_DIR"
+                ;;
+            *)
+                echo "Directory $P3_DIR will not be created. Exiting..."
+                exit 1
+                ;;
+            esac
+            ;;
+        esac
+    fi
+    load
+    exit 0
+}
+
+p3 "$@"
