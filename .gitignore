@@ -4,7 +4,6 @@
 !.zprofile
 !.config
 .config/*
-!.config/profile
 !.config/zsh
 .config/zsh/.zcompdump*
 .config/zsh/oh-my-zsh
@@ -12,3 +11,4 @@
 !.config/awesome
 !.config/rofi
 !.config/alacritty
+!.config/p3
