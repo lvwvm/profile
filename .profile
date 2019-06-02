@@ -6,7 +6,9 @@ progname='p3'
 author='Idigo Luwum'
 version='2.0.0'
 
-P3_DIR=${P3_DIR:+${HOME}/.config/p3}
+set -a
+
+P3_DIR="${P3_DIR:=${HOME}/.config/p3}"
 
 usage() {
     cat <-EOF
@@ -24,22 +26,12 @@ version() {
 }
 
 var() {
-    set -a
     # uppercase the environment variable.
     VAR=$(echo "$1" | tr "[:lower:]" "[:upper:]")
     if [ -z ${1:+} ]; then
         export "${VAR}=$2"
     fi
     unset VAR
-    set +a
-}
-
-load() {
-    for f in "$P3_DIR"/* ; do
-        if [ -x "$f" ]; then
-            . "$f"
-        fi
-    done
 }
 
 p3() {
@@ -59,7 +51,7 @@ p3() {
     if [ ! -d "$P3_DIR" ]; then
         #Don't read from stdin in a non-interactive shell.
         case "$-" in
-        *i*)
+            *i*)
             printf "Directory %s does not exist. Create (yY/nN): " "$P3_DIR"
             read -r answer
 
@@ -75,8 +67,11 @@ p3() {
             ;;
         esac
     fi
-    load
-    exit 0
+    for f in "${P3_DIR}"/* ; do
+        if [ -r "$f" ]; then
+            . "$f"
+        fi
+    done
 }
 
 p3 "$@"
