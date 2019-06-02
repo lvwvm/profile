@@ -75,6 +75,9 @@ zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug load
 
+GPG_TTY=$(tty)
+export GPG_TTY
+
 alias -g ls='exa --group-directories-first'
 alias -g ll='ls -l'
 alias -g la='ll -a'
