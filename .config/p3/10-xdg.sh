@@ -9,4 +9,7 @@ var "XDG_BIN_HOME" "${HOME}/.local/bin"
 #shellcheck disable=2034
 var "XDG_CACHE_HOME" "${HOME}/.local/cache"
 
-
+var "XDH" "${XDG_DATA_HOME}"
+var "XBH" "${XDG_BIN_HOME}"
+var "XCH" "${XDG_CONFIG_HOME}"
+var "XCA" "${XDG_CACHE_HOME}"
