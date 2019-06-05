@@ -67,11 +67,12 @@ p3() {
             ;;
         esac
     fi
-    for f in "${P3_DIR}"/* ; do
+    for f in "${P3_DIR}"/*.sh ; do
         if [ -r "$f" ]; then
             . "$f"
         fi
     done
+    unset f
 }
 
-p3 "$@"
+p3
