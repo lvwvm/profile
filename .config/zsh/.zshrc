@@ -1,46 +1,35 @@
-# appendhistory - If this is set, zsh sessions will append their history list to the history file, rather than replace it. 
+# appendhistory - If this is set, zsh sessions will append their history list to the history file, rather than replace it.
+setopt appendhistory
 
-# autocd - If a command is issued that can't be executed as  a  normal command,  and  the command is the name of a directory, perform the cd command to that directory.   
+# autocd - If a command is issued that can't be executed as  a  normal command,  and  the command is the name of a directory, perform the cd command to that directory.
+setopt autocd
 
 # beep - Beep on error in ZLE.
+setopt beep
 
-# extendedglob - Treat the `#', `~' and `^' characters as part  of  patterns for  filename  generation,  etc.  
+# extendedglob - Treat the `#', `~' and `^' characters as part  of  patterns for  filename  generation,  etc.
+setopt extendedglob
 
-# nomatch - If a pattern for filename generation has no matches,  print an  error,  instead of leaving it unchanged in the argument list. 
+# nomatch - If a pattern for filename generation has no matches,  print an  error,  instead of leaving it unchanged in the argument list.
+setopt nomatch
 
 # notify - Report  the  status  of background jobs immediately, rather than waiting until just before printing a prompt.
- 
-setopt appendhistory autocd beep extendedglob nomatch notify
+setopt notify
+
+# bindkey manages keymaps and bindings.
+# '-e' selects the emacs keymap as the main keymap
 bindkey -e
 
-# The following lines were added by compinstall
+GPG_TTY=$(tty)
+SSH_TTY=$(tty)
 
-zstyle ':completion:*' add-space true
-zstyle ':completion:*' auto-description '%d'
-zstyle ':completion:*' completer _list _oldlist _expand _complete _correct _approximate _prefix
-zstyle ':completion:*' completions 1
-zstyle ':completion:*' condition 0
-zstyle ':completion:*' expand prefix suffix
-zstyle ':completion:*' file-sort modification
-zstyle ':completion:*' format '%d:'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' insert-unambiguous true
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-suffixes true
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-/]=** r:|=**' 'l:|=* r:|=*'
-zstyle ':completion:*' max-errors 3 numeric
-zstyle ':completion:*' original true
-zstyle ':completion:*' preserve-prefix '//[^/]##/'
-zstyle ':completion:*' prompt '%e Possible Errors'
-zstyle ':completion:*' use-compctl true
-zstyle :compinstall filename '/home/luwum/.config/zsh/.zshrc'
+export SSH_TTY
+export GPG_TTY
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# source zplug.
+. "${ZPLUG_HOME}/init.zsh"
 
-. "${ZPLUG_HOME}/init.zsh" 
-
+# check for updates.
 if ! zplug check --verbose; then
     printf "Install zplug plugins? [y/N]: "
     if read -q; then
@@ -67,7 +56,7 @@ zplug "plugins/gem", from:"oh-my-zsh"
 zplug "plugins/pip", from:"oh-my-zsh"
 zplug "plugins/cargo", from:"oh-my-zsh"
 zplug "plugins/git", from:"oh-my-zsh"
-zplug "plugins/golang", from:"oh-my-zsh"
+zplug "plugins/golang", from:"xoh-my-zsh"
 zplug "plugins/systemd", from:"oh-my-zsh"
 zplug "MichaelAquilina/zsh-you-should-use", from:"github", as:"plugin"
 zplug "robertaudi/tsm"
@@ -76,11 +65,32 @@ zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug load
 
-GPG_TTY=$(tty)
-SSH_TTY=$(tty)
+# completion settings
 
-export SSH_TTY
-export GPG_TTY
+zstyle ':completion:*' add-space true
+zstyle ':completion:*' auto-description '%d'
+zstyle ':completion:*' completer _list _oldlist _expand _complete _correct _approximate _prefix
+zstyle ':completion:*' completions 1
+zstyle ':completion:*' condition 0
+zstyle ':completion:*' expand prefix suffix
+zstyle ':completion:*' file-sort modification
+zstyle ':completion:*' format '%d:'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-/]=** r:|=**' 'l:|=* r:|=*'
+zstyle ':completion:*' max-errors 3 numeric
+zstyle ':completion:*' original true
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' prompt '%e Possible Errors'
+zstyle ':completion:*' use-compctl true
+zstyle :compinstall filename '/home/luwum/.config/zsh/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+# End of lines added by compinstall
 
 alias -g ls='exa --group-directories-first'
 alias -g ll='ls -l'
