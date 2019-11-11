@@ -12,6 +12,9 @@ var "ZPLUG_BIN" "${XDG_BIN_HOME}"
 # Location of downloaded zplug repos
 var "ZPLUG_REPOS" "${ZPLUG_HOME}/repos"
 
+# Location of zplug cache.
+var "ZPLUG_CACHE_DIR" "${XDG_CACHE_HOME}/zplug"
+
 # The file to save the history in when an interactive shell exits.
 var "HISTFILE" "${XDG_DATA_HOME}/zsh/.histfile"
 
