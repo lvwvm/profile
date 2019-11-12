@@ -95,3 +95,7 @@ compinit
 alias -g ls='exa --group-directories-first'
 alias -g ll='ls -l'
 alias -g la='ll -a'
+
+# fasd cache is sourced to reduce shell startup.
+. "${_FASD_CACHE}"
+unset "${_FASD_CACHE}"
