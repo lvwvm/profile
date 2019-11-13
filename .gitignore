@@ -2,6 +2,8 @@
 !.gitignore
 !.profile
 !.zprofile
+!.zshrc
+!.zshenv
 !.config
 .config/*
 !.config/zsh
