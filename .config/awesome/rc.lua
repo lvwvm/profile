@@ -50,7 +50,7 @@ beautiful.notification_font = "NotoSansDisplay Nerd Font Regular Medium 12"
 terminal = "alacritty"
 browser = "firefox"
 filemanager = "pcmanfm"
-editor = "mousepad"
+editor = "gedit"
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
