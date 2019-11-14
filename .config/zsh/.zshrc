@@ -96,6 +96,11 @@ alias -g ls='exa --group-directories-first'
 alias -g ll='ls -l'
 alias -g la='ll -a'
 
+# source pyenv
+eval "$(pyenv init -)" 
+# source pyenv virtualenv
+eval "$(pyenv virtualenv-init -)"
+
 # fasd cache is sourced to reduce shell startup.
 . "${_FASD_CACHE}"
 unset _FASD_CACHE
