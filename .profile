@@ -22,7 +22,18 @@ usage() {
 }
 
 version() {
-    echo $version
+	echo $version
+}
+
+about() {
+	cat <-EOF
+	"Copyright (C) 2020 $author
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version."
+	EOF
 }
 
 var() {
@@ -45,6 +56,7 @@ p3() {
 		;;
 	-h | --help)
 		usage
+		about
 		exit 0
 		;;
 	esac
