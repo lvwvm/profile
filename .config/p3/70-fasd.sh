@@ -7,7 +7,7 @@ if [ ! -d "${_FASD_DATA}" ]; then
     mkdir "${_FASD_DATA}"
 fi
 
-if [ "$(command -v fasd)" -nt "${_FASD_CACHE}" ] || [ ! -s "${_FASD_CACHE}" ];then
-  fasd --init posix-hook posix-alias zsh-ccomp zsh-wcomp zsh-hook  >| "${_FASD_CACHE}"
+# shellcheck disable=SC2039
+if [ "$(command -v fasd)" -nt "${_FASD_CACHE}" ] || [ ! -s "${_FASD_CACHE}" ]; then
+	fasd --init posix-hook posix-alias zsh-ccomp zsh-wcomp zsh-hook zsh-ccomp-install zsh-wcomp-install >|"${_FASD_CACHE}"
 fi
-
