@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 var "_FASD_DATA" "${XDG_DATA_HOME}/fasd"
 var "_FASD_CACHE" "${XDG_CACHE_HOME}/fasd.cache"
 
