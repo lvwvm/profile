@@ -4,7 +4,7 @@ var "_FASD_DATA" "${XDG_DATA_HOME}/fasd"
 var "_FASD_CACHE" "${XDG_CACHE_HOME}/fasd.cache"
 
 if [ ! -d "${_FASD_DATA}" ]; then
-    mkdir "${_FASD_DATA}"
+	mkdir "${_FASD_DATA}"
 fi
 
 # shellcheck disable=SC2039
