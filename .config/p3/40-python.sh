@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 # tells virtualenvwrapper where to place your virtual environment.
 var "WORKON_HOME" "${XDG_DATA_HOME}/virtualenvs"
 var "PYENV_ROOT" "${XDG_DATA_HOME}/pyenv"
