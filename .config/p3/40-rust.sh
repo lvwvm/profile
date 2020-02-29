@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+var "RUSTUP_HOME" "${XDG_DATA_HOME}/rustup"
+
+if [ ! -d "${RUSTUP_HOME}" ]; then
+	mkdir "${RUSTUP_HOME}"
+fi
+
 # Rust cargo repository data.
 var "CARGO_HOME" "${XDG_DATA_HOME}/cargo"
 
