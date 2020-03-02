@@ -4,15 +4,14 @@
 var "WORKON_HOME" "${XDG_DATA_HOME}/virtualenvs"
 var "PYENV_ROOT" "${XDG_DATA_HOME}/pyenv"
 
-# pyenv manages python versions.
+# $pyenv_root stores location of managed python versions.
 if [ ! -d "${PYENV_ROOT}" ]; then
-    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-    rm "${PYENV_ROOT}/versions"
+	git clone https://github.com/pyenv/pyenv.git "${PYENV_ROOT}"
 fi
 
 # pyenv virtualenv support plugin.
 if [ ! -d "${PYENV_ROOT}/plugins/pyenv-virtualenv" ]; then
-    git clone https://github.com/pyenv/pyenv-virtualenv.git "${PYENV_ROOT}/plugins/pyenv-virtualenv"
+	git clone https://github.com/pyenv/pyenv-virtualenv.git "${PYENV_ROOT}/plugins/pyenv-virtualenv"
 fi
 
 if [ ! -d "${WORKON_HOME}" ]; then
