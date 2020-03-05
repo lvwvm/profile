@@ -19,6 +19,9 @@ if [ ! -d "${PYENV_ROOT}/plugins/pyenv-virtualenv" ]; then
 	git clone https://github.com/pyenv/pyenv-virtualenv.git "${PYENV_ROOT}/plugins/pyenv-virtualenv"
 fi
 
+# pyenv virtualenvwrapper support plugin.
+if [ ! -d "${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper" ]; then
+	git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git "${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper"
 fi
 
 if [ ! -L "${PYENV_ROOT}/versions" ];then
@@ -27,3 +30,6 @@ fi
 
 PATH="${PYENV_ROOT}/shims:$PATH"
 export PATH
+# any virtual environments created from the shell using mkvirtualenv will be created
+# using pyvenv.
+var "PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV" "true"
