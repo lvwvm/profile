@@ -27,9 +27,9 @@ fi
 if [ ! -L "${PYENV_ROOT}/versions" ];then
     ln -s "${PYENV_ROOT}/versions" "${WORKON_HOME}"
 fi
+# pyenv works by inserting a directory of shims at the front of your PATH
+var "PATH" "$PYENV_ROOT/shims:$PATH"
 
-PATH="${PYENV_ROOT}/shims:$PATH"
-export PATH
 # any virtual environments created from the shell using mkvirtualenv will be created
 # using pyvenv.
 var "PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV" "true"
