@@ -16,5 +16,6 @@
 !.config/rofi
 !.config/alacritty
 !.config/p3
+!.config/chemacs
 !.config/emacs
 *~
