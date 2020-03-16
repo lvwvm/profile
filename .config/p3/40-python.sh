@@ -24,8 +24,8 @@ if [ ! -d "${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper" ]; then
 	git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git "${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper"
 fi
 
-if [ ! -L "${PYENV_ROOT}/versions" ];then
-    ln -s "${PYENV_ROOT}/versions" "${WORKON_HOME}"
+if [ ! -L "${PYENV_ROOT}/versions" ]; then
+	ln -s "${PYENV_ROOT}/versions" "${WORKON_HOME}"
 fi
 # pyenv works by inserting a directory of shims at the front of your PATH
 var "PATH" "$PYENV_ROOT/shims:$PATH"
