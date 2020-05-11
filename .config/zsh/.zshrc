@@ -77,7 +77,7 @@ zstyle ':completion:*' file-sort modification
 zstyle ':completion:*' format '%d:'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' insert-unambiguous true
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' list-suffixes true
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-/]=** r:|=**' 'l:|=* r:|=*'
 zstyle ':completion:*' max-errors 3 numeric
