@@ -102,3 +102,4 @@ unset _FASD_CACHE
 
 # source pyenv virtualenv
 eval "$(pyenv virtualenv-init -)"
+eval "$(direnv hook zsh)"
