@@ -88,3 +88,5 @@ p3() {
 }
 
 p3
+
+unset -f about usage version p3
