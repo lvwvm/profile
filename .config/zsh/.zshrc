@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # appendhistory - If this is set, zsh sessions will append their history list to the history file, rather than replace it.
 setopt appendhistory
 
