@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Auto correct mistakes
+setopt correct
+
 # appendhistory - If this is set, zsh sessions will append their history list to the history file, rather than replace it.
 setopt appendhistory
 
