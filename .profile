@@ -45,6 +45,10 @@ var() {
 	unset VAR
 }
 
+find_init_name() {
+	ps -p 1 -o cmd | awk -e 'NR==2 { print $1 }'
+}
+
 p3() {
 	if [ $# -eq 1 ]; then
 		P3_DIR="$1"
