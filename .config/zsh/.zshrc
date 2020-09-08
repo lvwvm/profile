@@ -21,6 +21,14 @@ setopt nomatch
 # notify - Report  the  status  of background jobs immediately, rather than waiting until just before printing a prompt.
 setopt notify
 
+setopt hist_ignore_dups
+setopt hist_reduce_blanks
+setopt hist_fcntl_lock
+setopt hist_no_store
+setopt hist_save_no_dups
+setopt hist_expire_dups_first
+setopt inc_append_hist
+
 # bindkey manages keymaps and bindings.
 # '-e' selects the emacs keymap as the main keymap
 bindkey -e
