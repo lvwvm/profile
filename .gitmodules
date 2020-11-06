@@ -3,8 +3,8 @@
     url = git://gitlab.com/10b2/vim.git
 
 [submodule "awesome"]
-    path = .config/awesome
-    url = git://gitlab.com/10b2/awesome.git
+	path = .config/awesome
+	url = https://gitea.com/luwum/.config-awesome.git
 [submodule "chemacs"]
 	path = .config/chemacs
 	url = https://github.com/plexus/chemacs.git
