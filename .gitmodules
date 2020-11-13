@@ -8,3 +8,6 @@
 [submodule "chemacs"]
 	path = .config/chemacs
 	url = https://github.com/plexus/chemacs.git
+[submodule "systemd"]
+	path = .config/systemd
+	url = https://gitea.com/luwum/.config-systemd.git
