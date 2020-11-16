@@ -11,3 +11,6 @@
 [submodule "systemd"]
 	path = .config/systemd
 	url = https://gitea.com/luwum/.config-systemd.git
+[submodule "doom"]
+	path = .config/doom
+	url = https://gitea.com/luwum/.config-doom.git
