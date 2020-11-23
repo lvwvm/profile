@@ -29,11 +29,15 @@ about() {
 	cat <-EOF
 	"Copyright (C) 2020 $author
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version."
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version."
 	EOF
+}
+
+err() {
+	printf "$0 line $LINENO: $1"
 }
 
 var() {
@@ -45,7 +49,12 @@ var() {
 	unset VAR
 }
 
-find_init_name() {
+has() {
+	[ -x $(command -v $1) ]
+	return $?
+}
+
+find_init() {
 	ps -p 1 -o cmd | awk -e 'NR==2 { print $1 }'
 }
 
@@ -93,4 +102,4 @@ p3() {
 
 p3
 
-unset -f about usage version p3
+unset -f has var about usage version p3
