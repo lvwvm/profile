@@ -27,7 +27,7 @@ setopt hist_fcntl_lock
 setopt hist_no_store
 setopt hist_save_no_dups
 setopt hist_expire_dups_first
-setopt inc_append_hist
+setopt inc_append_history
 
 # bindkey manages keymaps and bindings.
 # '-e' selects the emacs keymap as the main keymap
