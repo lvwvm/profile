@@ -14,10 +14,10 @@ usage() {
 	cat <-EOF
 	"$progname is very simple way to manage profile initialization in pure posix sh.
 
-    Usage: p3 [OPTIONS] [P3_DIR]
+Usage: $progname [OPTIONS] [P3_DIR]
 
-    Where the default P3_DIR is ~/.config/p3
-    "
+Where the default P3_DIR is ~/.config/p3
+"
 	EOF
 }
 
