@@ -97,7 +97,10 @@ zstyle ':completion:*' original true
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
 zstyle ':completion:*' prompt '%e Possible Errors'
 zstyle ':completion:*' use-compctl true
-zstyle :compinstall filename '/home/luwum/.config/zsh/.zshrc'
+zstyle :compinstall filename "${ZDOTDIR}/.zshrc"
+
+. "$ASDF_DATA_DIR/asdf.sh"
+fpath=("$ASDF_COMPLETIONS/_asdf" $fpath)
 
 autoload -Uz compinit
 compinit
