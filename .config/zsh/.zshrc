@@ -73,7 +73,6 @@ zplug "plugins/golang", from:"oh-my-zsh"
 zplug "plugins/systemd", from:"oh-my-zsh"
 zplug "MichaelAquilina/zsh-you-should-use", from:"github", as:"plugin"
 zplug "robertaudi/tsm"
-zplug "lukechilds/zsh-nvm", from:"github", as:"plugin"
 zplug "zsh-users/zsh-syntax-highlighting"
 
 zplug load
