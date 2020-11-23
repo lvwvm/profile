@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 var "XDG_CONFIG_HOME" "${HOME}/.config"
 
 #shellcheck disable=2034
