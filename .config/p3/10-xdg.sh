@@ -5,6 +5,7 @@ var "XDG_DATA_HOME" "${HOME}/.local/share"
 
 #shellcheck disable=2034
 var "XDG_BIN_HOME" "${HOME}/.local/bin"
+var "PATH" "${XDG_BIN_HOME}:${PATH}"
 
 #shellcheck disable=2034
 var "XDG_CACHE_HOME" "${HOME}/.local/cache"

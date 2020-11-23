@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-var "PATH" "$PATH:${XBH}/bin"
+var "PATH" "$PATH"
 var "LC_ALL" "en_US.UTF-8"
 var "LANG" "en_US.UTF-8"
 var "TZ" "America/Chicago"
