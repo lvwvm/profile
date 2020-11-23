@@ -52,7 +52,7 @@ fi
 
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "mafredri/zsh-async", from:"github"
-zplug "sindresorhus/pure", use:"pure.zsh", from:"github", as:"theme"
+zplug "denysdovhan/spaceship-prompt", use:"spaceship.zsh", from:"github", as:"theme"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "chrissicool/zsh-256color"
