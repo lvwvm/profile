@@ -6,4 +6,9 @@
 if has "pinentry"; then
 	var "GIT_ASKPASS" "$(command -v pinentry)"
 fi
+
+if has "delta"; then
+	var "GIT_PAGER" "delta"
+else
+	var "GIT_PAGER" "${BAT_PAGER:-${PAGER}}"
 fi
