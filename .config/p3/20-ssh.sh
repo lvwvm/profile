@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
 
-var "SSH_AUTH_SOCK" "/run/user/1000/gnupg/S.gpg-agent.ssh"
-var "SSH_ASKPASS" "/usr/bin/pinentry-gnome3"
+var "SSH_AUTH_SOCK" $(
+	gpgconf --list-dir |
+		awk -F ":" -e "\$1 == \"agent-ssh-socket\"{ print \$2 }"
+)
+var "SSH_ASKPASS" "$XDG_BIN_HOME/pinentry"
