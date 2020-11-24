@@ -10,3 +10,7 @@ fi
 if [ ! -h "$XDG_BIN_HOME/doom" ]; then
 	ln -sT "${DOOM_DATA_DIR}/bin/doom" "$XDG_BIN_HOME"
 fi
+
+if has "doom"; then
+	doom env -a "SSH_AUTH_SOCK\|DBUS_SESSION_BUS_ADDRESS"
+fi
