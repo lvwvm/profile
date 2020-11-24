@@ -3,7 +3,7 @@
 # ZSH startup/shutdown files
 var "ZDOTDIR" "${XDG_CONFIG_HOME}/zsh"
 
-# Location of ZPLUG_HOME 
+# Location of ZPLUG_HOME
 var "ZPLUG_HOME" "${XDG_DATA_HOME}/zplug"
 
 # All binaries go here.
@@ -25,5 +25,5 @@ var "HISTSIZE" "12000"
 var "SAVEHIST" "10000"
 
 if ! [ -d "${ZPLUG_HOME}" ]; then
-    git clone https://github.com/zplug/zplug --depth=1 --branch 2.4.2 "${ZPLUG_HOME}"
+	git clone https://github.com/zplug/zplug --depth=1 --branch 2.4.2 "${ZPLUG_HOME}"
 fi

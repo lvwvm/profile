@@ -1,15 +1,15 @@
 #!/usr/bin/env sh
 
 if [ ! -d "${XDG_CONFIG_HOME}/npm" ]; then
-    mkdir "${XDG_CONFIG_HOME}/npm"
+	mkdir "${XDG_CONFIG_HOME}/npm"
 fi
 
 if [ ! -d "${XDG_DATA_HOME}/npm" ]; then
-    mkdir "${XDG_DATA_HOME}/npm" 
+	mkdir "${XDG_DATA_HOME}/npm"
 fi
 
 if [ ! -d "${XDG_CACHE_HOME}/npm" ]; then
-    mkdir "${XDG_CACHE_HOME}/npm" 
+	mkdir "${XDG_CACHE_HOME}/npm"
 fi
 var "NVM_DIR" "${XDG_DATA_HOME}/nvm"
 var "NVM_LAZY_LOAD" "true"
