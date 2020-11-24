@@ -32,6 +32,11 @@ else
 	return 1
 fi
 
+# Default Compiler Options
+var "CFLAGS" "-Wall -std=gnu17 -pedantic"
+var "CXXFLAGS" "-Wall -std=gnu++14 -stdlib=libc++ -pedantic"
+var "CPPFLAGS" "-Wall"
+
 # Set the version of the default compiler.
 if $HAS_CLANG; then
 	var "CLANG_VERSION" $(clang --version | awk 'NR==1 { print $3 }')
@@ -55,8 +60,3 @@ var "LD_PRELOAD" ""
 
 # Packages
 var "PKG_CONFIG_PATH" "/usr/local/lib/pkgconfig:/usr/lib/pkgconfig"
-
-# Options
-var "CFLAGS" "-Wall"
-var "CPPFLAGS" ""
-var "CXXFLAGS" "-Wall"
