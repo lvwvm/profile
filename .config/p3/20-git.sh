@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
-var "GIT_CONFIG" "${XCH}/git/config"
+# user global location for git config
+[ ! -d ${XDG_CONFIG_HOME}/git ] && mkdir ${XDG_CONFIG_HOME}/git
 
-if [ ! -d ${XCH}/git ]; then
-	mkdir ${XCH}/git
 fi
