@@ -13,7 +13,7 @@ if [ ! -h ~/.emacs.d ]; then
 		mkdir "${EMACSHOME}"
 	fi
 	if [ -d ~/.emacs.d ]; then
-		mv -rf ~/.emacs.d/* "${EMACSHOME}" 2>&/dev/null
+		mv -rf ~/.emacs.d/* "${EMACSHOME}"
 	fi
 
 	ln -sT "${EMACSHOME}" ~/emacs.d
@@ -31,7 +31,7 @@ if [ ! -h ~/.emacs ]; then
 		touch "${EMACSINIT}"
 	fi
 	if [ -f ~/.emacs ]; then
-		mv ~/.emacs "${EMACSINIT}" 2>&/dev/null
+		mv ~/.emacs "${EMACSINIT}"
 	fi
 	ln -sT "${EMACSINIT}" ~/.emacs
 fi
