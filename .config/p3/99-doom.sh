@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 var "DOOMDIR" "${XDG_CONFIG_HOME}/doom"
-var "DOOM_DATA_DIR" "${XDG_DATA_HOMR}/doom"
+var "DOOM_DATA_DIR" "${XDG_DATA_HOME}/doom"
 
 # DOOM's data directory
 if [ ! -d "${DOOM_DATA_DIR}" ]; then
