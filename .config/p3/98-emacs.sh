@@ -16,6 +16,7 @@ if [ ! -h ~/.emacs.d ]; then
 		mv -rf ~/.emacs.d/* "${EMACSHOME}"
 	fi
 
+	# link default emacs directory to user specified directory.
 	ln -sT "${EMACSHOME}" ~/emacs.d
 
 	# link ~/.config/emacs/init.el into EMACSHOME

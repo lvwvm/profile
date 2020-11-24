@@ -33,3 +33,5 @@ var "PATH" "$PYENV_ROOT/shims:$PATH"
 # any virtual environments created from the shell using mkvirtualenv will be created
 # using pyvenv.
 var "PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV" "true"
+
+var "POETRY_VIRTUALENVS_PATH" "${WORKON_HOME}"
