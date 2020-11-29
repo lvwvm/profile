@@ -8,7 +8,7 @@ minikube 1.13.1 system
 nodejs 15.3.0 system
 ocaml 4.11.1 system
 opam 2.0.7 system
-pnpm 5.10.4 system
+pnpm 5.13.5 system
 poetry 1.1.0 system
 python 3.8.6 system
 ruby 2.7.1 system
