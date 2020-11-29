@@ -1,0 +1,5 @@
+store-dir = ${XDG_DATA_HOME}/pnpm
+modules-dir = ${XDG_CACHE_HOME}/node_modules
+virtual-store-dir = ${XDG_CACHE_HOME}/pnpm
+node-linker = pnp
+symlink = false
