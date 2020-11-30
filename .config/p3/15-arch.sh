@@ -17,5 +17,5 @@ var "BUILDDIR" "${XDG_BUILD_HOME}"
 [ ! -d "$BUILDDIR" ] && mkdir "$BUILDDIR"
 
 # Where to clone package build files ( old pacaur variable )
-var "AURDEST" "${HOME}/Workspace"
+var "AURDEST" "${XDG_CACHE_HOME}/yay"
 [ ! -d "$AURDEST" ] && mkdir "$AURDEST"

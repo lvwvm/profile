@@ -1,6 +1,6 @@
 {
   "aururl": "https://aur.archlinux.org",
-  "buildDir": "/var/cache/aur",
+  "buildDir": "$XDG_CACHE_HOME/yay",
   "absdir": "$HOME/.cache/yay/abs",
   "editor": "",
   "editorflags": "",
