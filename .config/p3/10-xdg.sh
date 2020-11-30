@@ -19,7 +19,7 @@ var "XDG_BIN_HOME" "${HOME}/.local/bin"
 var "PATH" "${XDG_BIN_HOME}:${PATH}"
 
 #shellcheck disable=2034
-var "XDG_CACHE_HOME" "${HOME}/.local/cache"
+var "XDG_CACHE_HOME" "${HOME}/.cache"
 [ ! -d "${XDG_CACHE_HOME}" ] && mkdir "${XDG_CACHE_HOME}"
 
 var "XDG_VAR_HOME" "${HOME}/.local/var"
