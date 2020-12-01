@@ -51,7 +51,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-
   # Faux Scrolling (deprecated)
   #
   # The `faux_multiplier` setting controls the number of lines the terminal
@@ -226,7 +225,6 @@ mouse:
     # The URL is always added to the command as the last parameter.
     launcher: xdg-open
 
-
     # URL modifiers
     #
     # These are the modifiers that need to be held down for opening URLs when clicking
@@ -355,7 +353,7 @@ key_bindings:
   - { key: Insert, mods: Shift, action: PasteSelection }
   - { key: Key0, mods: Control, action: ResetFontSize }
   - { key: Equals, mods: Control, action: IncreaseFontSize }
-  - { key: Subtract, mods: Control, action: DecreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
   - { key: L, mods: Control, action: ClearLogNotice }
   - { key: L, mods: Control, chars: "\x0c" }
   - { key: Home, chars: "\x1bOH", mode: AppCursor }
