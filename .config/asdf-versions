@@ -10,7 +10,7 @@ ocaml 4.11.1 system
 opam 2.0.7 system
 pnpm 5.13.5 system
 poetry 1.1.0 system
-python 3.8.6 system
+python 3.9.0 system
 ruby 2.7.1 system
 rust 1.46.0 system
 shellcheck system 0.7.1
