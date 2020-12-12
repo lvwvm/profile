@@ -9,7 +9,8 @@ create = false
 # Create the virtualenv inside the project's root directory. Defaults to None.
 # If set to true, the virtualenv wil be created and expected in a folder named .venv within the root directory of the project.
 # If not set explicitly (default), poetry will use the virtualenv from the .venv directory when one is available. If set to false, poetry will ignore any existing .venv directory.
-in-project = null
+# in-project = null
 
 # Directory where virtual environments will be created. Defaults to {cache-dir}/virtualenvs
+# POETRY_VIRTUALENVS_PATH environment variable is instead.
 # path = "{cache-dir}/virtualenvs"
