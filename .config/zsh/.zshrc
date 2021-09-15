@@ -110,7 +110,3 @@ compinit
 alias -g ls='exa --group-directories-first'
 alias -g ll='ls -l'
 alias -g la='ll -a'
-
-# source pyenv virtualenv
-eval "$(pyenv virtualenv-init -)"
-eval "$(direnv hook zsh)"
