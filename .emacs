@@ -1,1 +1,1 @@
-/home/luwum/.config/chemacs/.emacs
+/home/luwum/.emacs.d/init.el
