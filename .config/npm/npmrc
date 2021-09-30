@@ -1,4 +1,3 @@
-prefix = .local/
 global-dir = ${XDG_LIB_HOME}/pnpm/global
 global-bin-dir = ${XDG_BIN_HOME}
 store-dir = ${XDG_DATA_HOME}/pnpm/store
