@@ -15,10 +15,20 @@ var "XDG_BUILD_HOME" "${HOME}/.local/build"
 var "XDG_BIN_HOME" "${HOME}/.local/bin"
 [ ! -d "${XDG_BIN_HOME}" ] && mkdir "${XDG_BIN_HOME}"
 
+var "XDG_LIB_HOME" "${HOME}/.local/lib"
+[ ! -d "${XDG_LIB_HOME}" ] && mkdir "${XDG_LIB_HOME}"
+
+var "XDG_INCLUDE_HOME" "${HOME}/.local/include/"
+[ ! -d "${XDG_INCLUDE_HOME}" ] && mkdir "${XDG_INCLUDE_HOME}"
+
 # add to path
 var "PATH" "${XDG_BIN_HOME}:${PATH}"
 
 #shellcheck disable=2034
+# Project templates
+var "XDG_TEMPLATE_HOME" "${HOME}/Templates"
+[ ! -d "${XDG_TEMPLATE_HOME}" ] && mkdir "${XDG_TEMPLATE_HOME}"
+
 var "XDG_CACHE_HOME" "${HOME}/.cache"
 [ ! -d "${XDG_CACHE_HOME}" ] && mkdir "${XDG_CACHE_HOME}"
 
