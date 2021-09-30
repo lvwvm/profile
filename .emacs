@@ -1,1 +1,0 @@
-/home/luwum/.emacs.d/init.el
