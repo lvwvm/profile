@@ -8,7 +8,7 @@ minikube 1.13.1 system
 nodejs lts-fermium
 ocaml 4.11.1 system
 opam 2.0.7 system
-pnpm 6.15.1
+pnpm 6.17.0
 poetry 1.1.0 system
 ruby 2.7.1 system
 rust 1.54.0
