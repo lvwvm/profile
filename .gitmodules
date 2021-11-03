@@ -13,3 +13,6 @@
 [submodule "doom"]
 	path = .config/doom
 	url = https://gitea.com/luwum/.config-doom.git
+[submodule "emacs"]
+	path = .config/emacs
+	url = https://github.com/lvwvm/.config-emacs.git
