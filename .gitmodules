@@ -1,7 +1,6 @@
 [submodule "nvim"]
     path = .config/nvim
-    url = git://gitlab.com/10b2/vim.git
-
+	url = https://github.com/lvwvm/.config-nvim.git
 [submodule "awesome"]
 	path = .config/awesome
 	url = https://gitea.com/luwum/.config-awesome.git
