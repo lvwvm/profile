@@ -1,0 +1,83 @@
+[user]
+	name = Idigo Luwum
+	email = luwum@pm.me
+
+[author]
+	name = Idigo Luwum
+	email = luwum@pm.me
+
+[committer]
+	name = lvwvm
+	email = luwum@pm.me
+
+[core]
+	repositoryformatversion = 1
+	# attempt to use local pinentry script for sensitive password prompt.
+	askPass = pinentry
+	# delta is a viewer for git and diff output.
+	pager = delta
+	# treat trailing space and non spaced tabs as errors
+	whitespace = trailing-space,space-before-tab,tab-in-indent
+[color]
+	# color $PAGER output if it is allowed.
+	pager = true
+[delta]
+	side-by-side = true
+	diff-so-fancy = true
+	line-numbers = true
+	syntax-theme = base16
+[grep]
+	lineNumber = true
+	patternType = extended
+[gpg]
+	program = gpg2
+	format = openpgp
+	#minTrustLevel = marginal
+
+[includeIf "gitdir:~/Workspace/"]
+	path = ~/Templates/git/config
+
+[interactive]
+    diffFilter = delta --color-only
+[protocol "https"]
+	allow = always
+[protocol "git"]
+	allow = always
+[protocol "ssh"]
+	allow = always
+[push]
+	# push the current branch to update a branch with the same name on
+    # the receiving end.
+	default = current
+	# gpgSign = true
+    # Make sure all submodule commits used by the revisions to be pushed are
+    # available on a remote-tracking branch.
+	recurseSubmodules=check
+[pull]
+	#  Fast forward on git pull.
+	#  "Fast forwarding" is when the HEAD of the base branch is
+	#  moved to the HEAD of the branch.
+	ff = only
+	#  rebase branches on top of the fetched branch, instead of merging.
+	rebase = merges
+[merge]
+	# the show the orginal text in merge conflicts.
+	conflictStyle = diff3
+	# If a commit is a direct descendent of a branch
+	# do not fast-forward when merging.
+	ff =false
+	# mergetool to use when gui specified.
+	#guitool = emerge
+	#verifySignatures = true
+[rebase]
+	# all commits must be specified when rebasing
+	missingCommitsCheck = warn
+	# the backend used for rebasing. apply or merge
+	backend = apply
+	# reorganize commit `rebase -i list` such that if two or more
+	# squash and/or fixup commits are the same, the squashing will
+	# come after the fix up.
+	autoSquash = true
+	autoStash = true
+[tag]
+	sign=true
