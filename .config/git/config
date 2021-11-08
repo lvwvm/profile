@@ -36,6 +36,8 @@
 
 [includeIf "gitdir:~/Workspace/"]
 	path = ~/Templates/git/config
+[includeIf "gitdir:~/Templates/"]
+	path = ~/Templates/git/config
 
 [interactive]
     diffFilter = delta --color-only
