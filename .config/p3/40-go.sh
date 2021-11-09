@@ -1,13 +1,20 @@
 #!/usr/bin/env sh
 
-# Go Environment Variables
-var "GOPATH" "${XDG_DATA_HOME}/go"
-var "GOBIN" "${XDG_BIN_HOME}"
+install_golang() {
+  asdf plugin add golang
+  asdf install golang latest
+}
 
-# GOENV
-var "GOENV_ROOT" "${XDG_DATA_HOME}/goenv"
-if [ ! -d "${GOENV_ROOT}" ]; then
-	git clone https://github.com/syndbg/goenv "${GOENV_ROOT}"
+config_golang() {
+  # Go Environment Variables
+  var "GOPATH" "${HOME}/.local"
+  var "GOBIN" "${XDG_BIN_HOME}"
+}
+
+if ! has "go"; then
+  install_golang
 fi
 
-var "PATH" "${GOENV_ROOT}/shims:${GOENV_ROOT}/bin:${PATH}"
+config_golang
+
+unset install_golang config_golang
