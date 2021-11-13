@@ -35,9 +35,9 @@
 	#minTrustLevel = marginal
 
 [includeIf "gitdir:~/Workspace/"]
-	path = ~/Templates/git/config
+	path = ~/.config/git/workspace-config
 [includeIf "gitdir:~/Templates/"]
-	path = ~/Templates/git/config
+	path = ~/.config/git/workspace-config
 
 [interactive]
     diffFilter = delta --color-only
