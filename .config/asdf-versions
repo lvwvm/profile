@@ -26,3 +26,5 @@ shfmt 3.3.1
 shellspec 0.28.1
 lua 5.4.3
 deno 1.15.2
+guile 3.0.7
+sqlite 3.37.1
