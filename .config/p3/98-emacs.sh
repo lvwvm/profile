@@ -6,6 +6,12 @@ var "EMACSHOME" "${XDG_DATA_HOME}/emacs"
 # EMACSINIT - a default "init.el" configuration script location.
 var "EMACSINIT" "${XDG_CONFIG_HOME}/emacs/init.el"
 
+# EMACSEN_CONFIG_HOME - tha path to emacs `distribution` configuration.
+var "EMACSEN_CONFIG_HOME" "${XDG_CONFIG_HOME}/emacsen"
+
+# EMACSEN_DATA_HOME - the path to various emacs `distributions`.
+var "EMACSEN_DATA_HOME" "${XDG_DATA_HOME}/emacsen"
+
 # This script was created, primarily, to handle the chemacs2 emacs profile manager.
 # Chemacs2 MUST exist at ~/.emacs.d
 if [ ! -d "$XDG_DATA_HOME/chemacs2" ]; then
@@ -13,7 +19,7 @@ if [ ! -d "$XDG_DATA_HOME/chemacs2" ]; then
 fi
 
 # The "emacsen" folder is storing emacs.d "distributions" like spacemacs, doom, prelude etc.
-[ ! -d "$XDG_DATA_HOME/emacsen" ] && mkdir "$XDG_DATA_HOME/emacsen"
+[ ! -d "$EMACSEN_DATA_HOME" ] && mkdir "$EMACSEN_DATA_HOME"
 
 # Emacs init search file order ~/.emacs.el, ~/.emacs, ~/.emacs.d/init.el - but remeber chemacs must see ~/.emacs.d
 # These path are prefered by emacs for backwards compatibility.
@@ -33,7 +39,7 @@ for _file in ~/.emacs.d/init.el ~/.emacs.el ~/.emacs; do
         mv --no-clobber \
           --backup=simple \
           --suffix=.bk \
-          "$_path" "$XDG_DATA_HOME/emacsen/"
+          "$_path" "$EMACSEN_DATA_HOME"
         ln -sT "$_path" "$XDG_DATA_HOME/chemacs2"
       fi
       ;;
@@ -43,7 +49,7 @@ for _file in ~/.emacs.d/init.el ~/.emacs.el ~/.emacs; do
       if [ -f "$_file" ] && [ ! -h "$_file" ]; then
         mv --backup=simple \
           --suffix=.bk \
-          "$_file" "$XDG_DATA_HOME/emacsen/emacs.d/"
+          "$_file" "$EMACSEN_DATA_HOME/emacs.d/"
       elif [ -f "$_file" ] && [ -h "$_file" ]; then
         unlink "$_file"
       fi

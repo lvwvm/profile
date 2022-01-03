@@ -14,11 +14,11 @@
 	path = .config/systemd
 	url = https://github.com/lvwvm/.config-systemd.git
 	branch = develop
-[submodule "doom"]
-	path = .config/doom
-	url = https://github.com/lvwvm/.config-doom.git
-	branch = develop
 [submodule "emacs"]
 	path = .config/emacs
 	url = https://github.com/lvwvm/.config-emacs.git
 	branch = develop
+[submodule "emacsen"]
+	path = .config/emacsen
+	url = https://github.com/lvwvm/.config-emacsen.git
+    branch = develop
