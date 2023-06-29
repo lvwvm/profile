@@ -18,6 +18,7 @@
 	pager = delta
 	# treat trailing space and non spaced tabs as errors
 	whitespace = trailing-space,space-before-tab,tab-in-indent
+	excludesfile = /home/luwum/.config/git/ignore
 [color]
 	# color $PAGER output if it is allowed.
 	pager = true
@@ -83,3 +84,5 @@
 	autoStash = true
 [tag]
 	sign=true
+[protocol "file"]
+	allow = always
