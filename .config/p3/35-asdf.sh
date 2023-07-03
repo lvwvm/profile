@@ -11,7 +11,7 @@ config_asdf() {
   [ ! -f $ASDF_CONFIG_FILE ] && touch $ASDF_CONFIG_FILE
 
   # filename for storing the tool names and versions.
-  var "ASDF_DEFAULT_TOOL_VERSIONS_FILENAME" "${XDG_CONFIG_HOME}/asdf-versions"
+  var "ASDF_DEFAULT_TOOL_VERSIONS_FILENAME" ".config/asdf-versions"
   var "ASDF_COMPLETIONS" "$ASDF_DATA_DIR/completions"
 }
 

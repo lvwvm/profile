@@ -3,4 +3,4 @@
 # source pyenv virtualenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-eval "$(rbenv init -)"
+
