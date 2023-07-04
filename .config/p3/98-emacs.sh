@@ -1,15 +1,12 @@
 #!/usr/bin/env sh
 
-# EMACSHOME - a default "emacs.d" data location.
-var "EMACSHOME" "${XDG_DATA_HOME}/emacs"
+# EMACSDIR - a default "emacs.d" data location.
+var "EMACSDIR" "${XDG_DATA_HOME}/emacsen/doom"
 
-# EMACSINIT - a default "init.el" configuration script location.
-var "EMACSINIT" "${XDG_CONFIG_HOME}/emacs/init.el"
-
-# EMACSEN_CONFIG_HOME - tha path to emacs `distribution` configuration.
+# EMACSEN_CONFIG_HOME - path to various `distribution\profile` configurations.
 var "EMACSEN_CONFIG_HOME" "${XDG_CONFIG_HOME}/emacsen"
 
-# EMACSEN_DATA_HOME - the path to various emacs `distributions`.
+# EMACSEN_DATA_HOME - the path to various `distributions`.
 var "EMACSEN_DATA_HOME" "${XDG_DATA_HOME}/emacsen"
 
 # This script was created, primarily, to handle the chemacs2 emacs profile manager.

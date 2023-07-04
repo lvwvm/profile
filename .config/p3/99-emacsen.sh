@@ -3,8 +3,8 @@
 var "CENTAUR_DATA_HOME" "$EMACSEN_DATA_HOME/centaur"
 var "CENTAUR_CONFIG_HOME" "$EMACSEN_CONFIG_HOME/centaur"
 
-var "DOOMDIR" "${XDG_CONFIG_HOME}/doom"
-var "LOCALDOOMDIR" "${XDG_CACHE_HOME}/doom"
+var "DOOMDIR" "${XDG_CONFIG_HOME}/emacsen/doom"
+var "LOCALDOOMDIR" "${XDG_CACHE_HOME}/emacsen/doom"
 var "DOOM_DATA_DIR" "${XDG_DATA_HOME}/emacsen/doom"
 
 var "SPACEMACS_DATA_HOME" "$EMACSEN_DATA_HOME/spacemacs"
