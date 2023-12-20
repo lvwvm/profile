@@ -109,7 +109,7 @@ compinit
 
 eval "$(asdf exec direnv hook zsh)"
 
-alias -g ls='exa --group-directories-first'
+alias -g ls='eza --group-directories-first'
 alias -g ll='ls -l'
 alias -g la='ll -a'
 alias npm='pnpm'
