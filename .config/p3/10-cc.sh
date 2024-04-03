@@ -51,8 +51,10 @@ fi
 # Headers
 
 # Libraries
-var "LD_LIBRARY_PATH" "/usr/local/lib:/usr/lib"
-var "LD_PRELOAD" ""
+# LD_LIBRARY_PATH and LD_PRELOAD should almost always never be set in scripts.
+# var "LD_LIBRARY_PATH" "/usr/local/lib:/usr/lib"
+# var "LD_PRELOAD" ""
+#
 # Searched after any paths given with -I on command line.
 # Used regardless of the language being preprocessed.
 var "CPATH" ":src"
@@ -61,7 +63,7 @@ var "CPATH" ":src"
 var "C_INCLUDE_PATH" ":/usr/local/include:/usr/include"
 
 # Use -stdlib= libc++ for clang++ or libstdc++ for g++ c++ library.
-var "CPLUS_INCLUDE_PATH" ":/usr/local/include:/usr/include/c++/${GCC_VERSION}:/usr/include"
+#var "CPLUS_INCLUDE_PATH" ":/usr/local/include:/usr/include/c++/${GCC_VERSION}:/usr/include"
 #var "OBJC_INCLUDE_PATH" "/usr/lib/gcc/x86_64-pc-linux-gnu/${GCC_VERSION}/include/objc"
 
 # Packages
