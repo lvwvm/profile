@@ -113,3 +113,4 @@ alias -g ls='eza --group-directories-first'
 alias -g ll='ls -l'
 alias -g la='ll -a'
 alias npm='pnpm'
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
