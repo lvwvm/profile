@@ -4,7 +4,7 @@
 if has "clang"; then
 
 	# Clang Compiler
-	var "CC" $(command -v clang)
+	var "CC" "$(command -v clang)"
 
 	# Clang++ Compiler
 	var "CXX" "${CC}++"
@@ -18,13 +18,13 @@ if has "clang"; then
 elif has "gcc"; then
 
 	# GCC Compiler
-	var "CC" $(command -v gcc)
+	var "CC" "$(command -v gcc)"
 
 	# G++ Compiler
 	var "CXX" "${CC}++"
 
 	# GCC Preprocessor
-	var "CPP" $(command -v cpp)
+	var "CPP" "$(command -v cpp)"
 
 	var "HAS_GCC" 1
 else
@@ -33,19 +33,19 @@ else
 fi
 
 # Default Compiler Options
-var "CFLAGS" "-Wall -std=gnu17 -pedantic"
-var "CXXFLAGS" "-Wall -std=gnu++14 -stdlib=libc++ -pedantic"
+var "CFLAGS" "-Wall -std=gnu17"
+var "CXXFLAGS" "-Wall -std=gnu++14 -stdlib=libc++"
 var "CPPFLAGS" "-Wall"
 
 # Set the version of the default compiler.
 if $HAS_CLANG; then
-	var "CLANG_VERSION" $(clang --version | awk 'NR==1 { print $3 }')
-	var "CLANG_INCLUDE_PATH" /usr/lib/clang/${CLANG_VERSION}/include
+	var "CLANG_VERSION" "$(clang --version | awk 'NR==1 { print $3 }')"
+#	var "CLANG_INCLUDE_PATH" "/usr/lib/clang/${CLANG_VERSION}/include"
 fi
 
 if $HAS_GCC; then
-	var "GCC_VERSION" $(gcc --version | head -n 1 | cut -d" " -f3)
-	var "GCC_INCLUDE_PATH" /usr/lib/gcc/${GCC_VERSION}/include
+	var "GCC_VERSION" "$(gcc --version | head -n 1 | cut -d' '-f3)"
+	var "GCC_INCLUDE_PATH" "/usr/lib/gcc/${GCC_VERSION}/include"
 fi
 
 # Headers
