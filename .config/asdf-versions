@@ -2,9 +2,9 @@ act 0.2.15 system
 direnv 2.32.2
 docker-slim 1.24 system
 flutter 1.22.0-stable system
-golang 1.17.3
+golang 1.22.2
 k92 0.22.1 system
-minikube 1.29.0
+minikube 1.33.0
 nodejs lts-fermium
 ocaml 4.11.1 system
 opam 2.0.7 system
@@ -30,3 +30,4 @@ guile 3.0.7
 sqlite 3.37.1
 helm 3.14.2
 azure-cli 2.58.0
+opentofu 1.6.2
