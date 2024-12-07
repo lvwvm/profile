@@ -99,18 +99,21 @@ zstyle ':completion:*' prompt '%e Possible Errors'
 zstyle ':completion:*' use-compctl true
 zstyle :compinstall filename "${ZDOTDIR}/.zshrc"
 
-. "$ASDF_DATA_DIR/asdf.sh"
-fpath=("$ASDF_COMPLETIONS/_asdf" $fpath)
+
+
 
 autoload -Uz compinit
 compinit
 
 # End of lines added by compinstall
 
-eval "$(asdf exec direnv hook zsh)"
+
 
 alias -g ls='eza --group-directories-first'
 alias -g ll='ls -l'
 alias -g la='ll -a'
 alias npm='pnpm'
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+
+eval "$(${XDG_BIN_HOME:-$HOME/.local/bin}/mise activate zsh)"
+eval "$(${XDG_BIN_HOME:-$HOME/.local/bin}/mise direnv)"
